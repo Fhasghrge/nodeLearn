@@ -1,6 +1,7 @@
 let http = require('http')
 let fs = require('fs')
 let template = require('art-template')
+let url = require('url')
 var comments = [
   {
     name: '张三',
@@ -30,8 +31,9 @@ var comments = [
 ]
 http
       .createServer((req, res) => {
-        let url = req.url
-        if(url === '/') {
+        let parseObj = url.parse(req.url, true)
+        let pathName = parseObj.pathname
+        if(pathName === '/') {
           fs.readFile('./views/index.html', (err, data) => {
             if(err){
               return res.end('the request is error')
@@ -41,15 +43,15 @@ http
             })
             res.end(html)
           })
-        }else if (url.indexOf('/public/') === 0){
-          fs.readFile('.' + url, (err, data) => {
+        }else if (pathName.indexOf('/public/') === 0){
+          fs.readFile('.' + pathName, (err, data) => {
             if(err){
               return res.end('you are error')
             }else {
               res.end(data)
             }
           })
-        }else if(url === '/post'){
+        }else if(pathName === '/post'){
           fs.readFile('./views/post.html', (err, data) => {
             if(err) {
               return res.end('no found')
@@ -57,6 +59,19 @@ http
               res.end(data)
             }
           })
+        }else if(pathName === '/pinglun') {
+          let comment = parseObj.query
+          let data = new Date()
+          let data_year = data.getFullYear()
+          let data_mouth = data.getMonth() + 1
+          let data_day = data.getDate()
+          let data_hour = data.getHours()
+          let data_mint = data.getMinutes()
+          comment.dateTime = data_hour.toString() + ':' + data_mint + '  ' + data_year + '-' + data_mouth + '-' + data_day
+          comments.unshift(comment)
+          res.statusCode = 302 // 状态码告诉客户端进行重定向
+          res.setHeader('Location', '/') // 告诉客户端重定向到哪个地址
+          res.end()
         }else {
           fs.readFile('./views/404.html', (err, data) => {
             if(err) {
