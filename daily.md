@@ -15,3 +15,9 @@
 -  如何获取post数据
   - express本身是没有获取post数据的api
   - 通过插件`body-parser`实现
+  ```javascript
+  app.use('/public/', express.static('./public/'))
+  app.engine('html', require('express-art-template'))
+  app.use(bodyParser.urlencoded({ extended: false }))
+  app.use(bodyParser.json())
+```
