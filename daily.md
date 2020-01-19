@@ -12,4 +12,6 @@
   - `app.set('views', newname)`
 
 ### 如何处理post请求--在express中
--  
+-  如何获取post数据
+  - express本身是没有获取post数据的api
+  - 通过插件`body-parser`实现
