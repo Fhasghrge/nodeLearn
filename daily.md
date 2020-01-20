@@ -21,3 +21,9 @@
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use(bodyParser.json())
 ```
+
+### day05
+
+- 一般异步api都带有回调函数
+- npm 5以后不用添加`--save`自动为`package.json`添加数据
+- `package.lock.json`文件保存`node_modules`文件包依赖树，加快分析依赖；同样可以保证下载时版本的稳定性，防止版本自动更新带来的问题
