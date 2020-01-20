@@ -1,12 +1,1 @@
-{
-  "students": [
-    {"id": 1, "name": "张三", "age": 19, "gender": 0, "hobbies": "吃饭，睡觉"},
-    {"id": 2, "name": "张三", "age": 19, "gender": 0, "hobbies": "吃饭，睡觉"},
-    {"id": 3, "name": "张三", "age": 19, "gender": 0, "hobbies": "吃饭，睡觉"},
-    {"id": 4, "name": "张三", "age": 19, "gender": 0, "hobbies": "吃饭，睡觉"},
-    {"id": 5, "name": "张三", "age": 19, "gender": 0, "hobbies": "吃饭，睡觉"},
-    {"id": 6, "name": "张三", "age": 19, "gender": 0, "hobbies": "吃饭，睡觉"},
-    {"id": 7, "name": "张三", "age": 19, "gender": 0, "hobbies": "吃饭，睡觉"},
-    {"id": 8, "name": "张三", "age": 19, "gender": 0, "hobbies": "吃饭，睡觉"}
-  ]
-}
+{"students":[{"id":2,"name":"张三痘痘的","age":"19","gender":"0","hobbies":"吃饭，睡觉"},{"id":3,"name":"张三","age":19,"gender":0,"hobbies":"吃饭，睡觉"},{"id":4,"name":"张三","age":19,"gender":0,"hobbies":"吃饭，睡觉"},{"id":5,"name":"张三","age":19,"gender":0,"hobbies":"吃饭，睡觉"},{"id":6,"name":"张三","age":19,"gender":0,"hobbies":"吃饭，睡觉"},{"id":7,"name":"张三","age":19,"gender":0,"hobbies":"吃饭，睡觉"},{"id":8,"name":"张三","age":19,"gender":0,"hobbies":"吃饭，睡觉"},{"name":"fsdfs","gender":"0","age":"43","hobbies":"32232","id":9}]}
