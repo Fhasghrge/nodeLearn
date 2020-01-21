@@ -9,7 +9,7 @@ let userSchema = new Schema({
   name: {
     type: String,
     required: true
-  },
+  },  
   password: {
     type:String,
     required: true
@@ -52,5 +52,31 @@ User.find({
     console.log('查询失败！')
   }else {
     console.log(res)
+  }
+})
+
+/**
+ * 删除数据
+ */
+User.remove({
+  name:'zs'
+}, (err, ret) => {
+  if(err) {
+    console.log('删除失败')
+  }else {
+    console.log('删除成功')
+  }
+})
+
+/**
+ * 修改数据
+ */
+User.findByIdAndUpdate('5e26eba4b91abf393c8ac468', {
+  name: 'zhangshuai'
+}, (err, ret) => {
+  if(err) {
+    console.log('更新失败')
+  }else {
+    console.log('更新成功')
   }
 })
