@@ -5,7 +5,7 @@
 let fs = require('fs')
 //  获取所有学生列表
 exports.find = function(callback) {
-  fs.readFile('./db.json', (err, data) => {
+  fs.readFile('./db.json', (err, data) => { // 这里是相对于执行文件时的路径
     if(err) {
       return callback(err)
     }

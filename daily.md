@@ -41,3 +41,24 @@
   - 显示当前数据库的所有集合`show collections`
   - 查询指定对象的所有数据`db.students.find()
 - mongodb中数据库（保存数组的对象），集合（数组），文档的概念（对象）
+
+### day07
+
+- node中两个特殊的模块
+  - `__dirname`动态获取当前文件路径
+  - `__filename`动态获取当前文件路径和文件名
+- node中使用相对路径是不可靠的
+
+- 当中间价调用next()含有参数(一般传入错误对象），则直接调用错误处理的中间件
+```javascript
+app.use(function(err, req, res, next){
+
+})
+app.get('/', function(req, res) {
+
+})
+
+app.use(functiion(req, res) {
+
+})
+```
