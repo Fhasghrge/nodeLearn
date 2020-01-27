@@ -75,6 +75,6 @@ app.get('/pinglun', (req, res) => {
   res.redirect('/')
 })
 
-app.listen(3000, () => {
+app.listen(80, () => {
   console.log('express is running...')
 })
