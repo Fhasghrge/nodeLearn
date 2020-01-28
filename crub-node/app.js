@@ -14,6 +14,6 @@ app.use(bodyParser.json())
 // router(app)
 app.use(router) // 把路由挂载到服务器
 
-app.listen(3000, () => {
+app.listen(80, () => {
   console.log('running...')
 })
