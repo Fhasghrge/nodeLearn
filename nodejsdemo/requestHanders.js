@@ -1,11 +1,13 @@
 const exec = require('child_process').exec // 简单实用的非阻塞操作
 function start(response) {
   console.log('Request handers Start is called')
-  exec('ls -lah', (err, stdout, stderr) => {
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
-    response.write(stdout)
-    response.end()
-  })
+  exec('find /',
+    { timeout: 10000, maxBuffer: 20000 * 1024 },
+    (err, stdout, stderr) => {
+      response.writeHead(200, { 'Content-Type': 'text/plain' })
+      response.write(stdout)
+      response.end()
+    })
 }
 
 function upload(response) {
